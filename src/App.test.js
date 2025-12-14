@@ -1,8 +1,10 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+test('renders the main header text', () => {
+    render(<App />);
+    // Шукаємо текст "My dream team", який знаходиться всередині компонента <Header />
+    // 'i' означає case-insensitive (нечутливий до регістру)
+    const headerElement = screen.getByText(/My dream team/i);
+    expect(headerElement).toBeInTheDocument();
 });
